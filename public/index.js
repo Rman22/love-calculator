@@ -23,11 +23,10 @@ CalculateBtn.addEventListener("click", () =>{
     .then(res => res.json())
     .then(response)
     .catch(err => console.warn(err.message))
-    
-    console.log("clicked")
+    load.style.display="flex"
     setTimeout(function(){
         displayResult.style.display="flex"
-        load.style.display="flex"
+
     },2000)
 
     results.innerHTML =""
@@ -41,9 +40,9 @@ function response(data){
    
     results.innerHTML = 
     `
-    <p class="uppercase" >${data.fname}</p>
-    <p>+</p>
     <p class="uppercase" >${data.sname}</p>
+    <p>+</p>
+    <p class="uppercase" >${data.fname}</p>
     <div class="text-base text-red-700 mt-5 ">
         <p>Percentage: ${data.percentage}%</p>
         
